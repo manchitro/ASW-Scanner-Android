@@ -12,7 +12,8 @@
         android:layout_height="729dp"
         android:orientation="vertical"
         android:weightSum="3"
-        tools:layout_editor_absoluteX="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="1dp">
 
         <LinearLayout
@@ -25,42 +26,104 @@
             tools:layout_editor_absoluteY="1dp">
 
 
-            <TextView
-                android:id="@+id/textView2"
+            <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ASW"
-                android:textAlignment="center"
-                android:textColor="@android:color/white"
-                android:textSize="72sp" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Automate Your Class"
-                android:textAlignment="center"
-                android:textColor="@android:color/white"
-                android:textSize="24sp" />
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ASW"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="72sp" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Automate Your Class"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="654dp">
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="208dp"
+                        android:layout_height="48dp"
+                        android:text="LOG IN"
+                        android:textAlignment="center"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#03DAC5"
+                        android:textSize="30sp"
+                        android:textStyle="bold|italic"
+                        tools:layout_editor_absoluteX="31dp"
+                        tools:layout_editor_absoluteY="231dp" />
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="with your VUES account"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:textStyle="bold|italic"
+                        tools:layout_editor_absoluteX="192dp"
+                        tools:layout_editor_absoluteY="244dp" />
+
+                    <EditText
+                        android:id="@+id/editTextTextEmailAddress2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textEmailAddress"
+                        android:text="User ID"
+                        android:textColor="#FFFFFF"
+                        tools:layout_editor_absoluteX="82dp"
+                        tools:layout_editor_absoluteY="333dp" />
+
+                    <EditText
+                        android:id="@+id/editTextTextPassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPassword"
+                        android:text="Password"
+                        android:textColor="#FFFFFF"
+                        tools:layout_editor_absoluteX="81dp"
+                        tools:layout_editor_absoluteY="418dp" />
+
+                    <Button
+                        android:id="@+id/button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Next"
+                        tools:layout_editor_absoluteX="82dp"
+                        tools:layout_editor_absoluteY="495dp" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Forgot password?"
+                        android:textColor="#FFFFFF"
+                        tools:layout_editor_absoluteX="200dp"
+                        tools:layout_editor_absoluteY="516dp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Login"
-            android:textColor="@android:color/white" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

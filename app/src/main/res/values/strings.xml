@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">ASW scanner</string>
+    <string name="Title">ASW</string>
+    <string name="subtitle">Automate Your Class</string>
+    <string name="textLogin">Login</string>
+    <string name="idPlaceholder">Academic ID</string>
+    <string name="passwordPlaceholder">Password</string>
+    <string name="btnForgotText">Forgot Password?</string>
+    <string name="btnLoginText">Login</string>
 </resources>

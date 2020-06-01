@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#303030"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     tools:context=".MainActivity"
     android:weightSum="5">
 
@@ -50,8 +50,8 @@
 
     <View
         android:id="@+id/view3"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
         android:background="#32a1b8"/>
 
     <LinearLayout
@@ -70,8 +70,8 @@
                 android:id="@+id/textLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="70sp"
-                android:layout_marginEnd="70sp"
+                android:layout_marginStart="50sp"
+                android:layout_marginEnd="50sp"
                 android:includeFontPadding="false"
                 android:text="@string/textLogin"
                 android:textAlignment="textStart"
@@ -82,9 +82,9 @@
                 android:id="@+id/editId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="70sp"
+                android:layout_marginStart="50sp"
                 android:layout_marginTop="20sp"
-                android:layout_marginEnd="70sp"
+                android:layout_marginEnd="50sp"
                 android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/idPlaceholder"
@@ -100,9 +100,9 @@
                 android:id="@+id/editPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="70sp"
+                android:layout_marginStart="50sp"
                 android:layout_marginTop="20sp"
-                android:layout_marginEnd="70sp"
+                android:layout_marginEnd="50sp"
                 android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/passwordPlaceholder"

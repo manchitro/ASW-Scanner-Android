@@ -1,10 +1,18 @@
 <resources>
     <string name="app_name">ASW scanner</string>
-    <string name="Title">ASW</string>
+    <string name="title">ASW</string>
     <string name="subtitle">Automate Your Class</string>
-    <string name="textLogin">Login</string>
-    <string name="idPlaceholder">Academic ID</string>
-    <string name="passwordPlaceholder">Password</string>
-    <string name="btnForgotText">Forgot Password?</string>
-    <string name="btnLoginText">Login</string>
+    <string name="login">Login</string>
+    <string name="id_placeholder">Academic ID</string>
+    <string name="password_placeholder">Password</string>
+    <string name="btnForgot_text">Forgot Password?</string>
+    <string name="btnLogin_text">Login</string>
+    <string name="welcome_student">Welcome, Wasi Ul Islam Tasin </string>
+    <string name="academic_id">18-33424-1</string>
+    <string name="btnLogout_text">Logout</string>
+    <string name="btnScan_text">Scan</string>
+    <string name="btnHistory_text">History</string>
+    <string name="btnProfile_text">Profile</string>
+    <string name="history_title">Attendance History</string>
+    <string name="student_name">Wasi Ul Islam Tasin</string>
 </resources>

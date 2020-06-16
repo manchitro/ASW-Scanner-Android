@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#303030"
@@ -10,21 +11,22 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/layout_welcome"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="13"
+        android:layout_weight="12"
         android:background="#484848"
-        android:weightSum="15"
-        android:orientation="horizontal"
         android:baselineAligned="false"
-        >
+        android:orientation="horizontal"
+        android:weightSum="15">
 
         <LinearLayout
+            android:id="@+id/layout_welcomeMessage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="4"
-            android:orientation="vertical"
+            android:layout_weight="3"
             android:gravity="center_vertical|center_horizontal|center"
+            android:orientation="vertical"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
             tools:ignore="NestedWeights">
@@ -45,15 +47,16 @@
                 android:text="@string/academic_id"
                 android:textColor="#d9d9d9"
                 android:textSize="18sp"
-                android:textStyle="italic"/>
+                android:textStyle="italic" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_logout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="11"
+            android:layout_weight="12"
             android:gravity="center_vertical|center_horizontal|center"
+            android:orientation="vertical"
             android:paddingStart="15dp"
             android:paddingEnd="15dp">
 
@@ -61,10 +64,10 @@
                 android:id="@+id/btnLogout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/btnLogout_text"
                 android:background="@drawable/logout_btn_bg_stroke"
+                android:text="@string/btnLogout_text"
                 android:textColor="#d9d9d9"
-                android:textSize="12sp"/>
+                android:textSize="12sp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -72,55 +75,56 @@
         android:id="@+id/viewDivider"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="#32a1b8"/>
+        android:background="#32a1b8" />
 
     <LinearLayout
+        android:id="@+id/layout_menu"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="100dp"
         android:layout_weight="2"
-        android:weightSum="10"
-        android:orientation="vertical"
         android:gravity="center_vertical|center|center_horizontal"
-        android:paddingStart="50dp"
-        android:paddingEnd="50dp"
-        android:paddingTop="100dp"
-        android:paddingBottom="100dp">
+        android:orientation="horizontal"
+        android:weightSum="10">
 
         <Button
             android:id="@+id/btnScan"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/btnScan_text"
-            android:layout_weight="4"
-            tools:ignore="NestedWeights"
-            android:background="#32a1b8"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="5dp"
-            android:textSize="20sp"
+            android:layout_weight="4"
+            android:background="#32a1b8"
+            android:text="@string/btnScan_text"
             android:textAllCaps="false"
-            android:textColor="#303030"/>
+            android:textColor="#303030"
+            android:textSize="20sp"
+            tools:ignore="NestedWeights" />
 
         <Button
             android:id="@+id/btnHistory"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/btnHistory_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="#32a1b8"
-            android:layout_margin="5dp"
-            android:textSize="20sp"
+            android:text="@string/btnHistory_text"
             android:textAllCaps="false"
-            android:textColor="#303030"/>
+            android:textColor="#303030"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btnProfile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/btnProfile_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
             android:layout_weight="1"
             android:background="#32a1b8"
-            android:layout_margin="5dp"
-            android:textSize="20sp"
+            android:text="@string/btnProfile_text"
             android:textAllCaps="false"
-            android:textColor="#303030"/>
+            android:textColor="#303030"
+            android:textSize="20sp" />
     </LinearLayout>
 </LinearLayout>

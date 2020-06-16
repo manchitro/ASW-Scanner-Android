@@ -2,148 +2,137 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#303030"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:weightSum="5">
+    android:weightSum="5"
+    tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/layoutTitle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="3"
         android:background="#484848"
         android:orientation="vertical"
-        >
+        android:gravity="center_horizontal|center_vertical|center">
 
 
-        <RelativeLayout
+        <TextView
+            android:id="@+id/textTitle"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical|center_horizontal|center"
-            >
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="@string/title"
+            android:textAlignment="center"
+            android:textColor="#d9d9d9"
+            android:textSize="72sp" />
 
-            <TextView
-                android:id="@+id/textTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="20sp"
-                android:text="@string/Title"
-                android:textAlignment="center"
-                android:textColor="#d9d9d9"
-                android:includeFontPadding="false"
-                android:textSize="72sp" />
+        <TextView
+            android:id="@+id/textSubtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="@string/subtitle"
+            android:textAlignment="center"
+            android:textColor="#d9d9d9"
+            android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/textSubtitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/textTitle"
-                android:text="@string/subtitle"
-                android:textAlignment="center"
-                android:textColor="#d9d9d9"
-                android:includeFontPadding="false"
-                android:textSize="16sp" />
-        </RelativeLayout>
     </LinearLayout>
 
     <View
-        android:id="@+id/view3"
+        android:id="@+id/viewDivider"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="#32a1b8"/>
+        android:background="#32a1b8" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="2"
+        android:gravity="center_vertical|center_horizontal|center"
         android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/textLogin"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical|center_horizontal|center"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70sp"
+            android:layout_marginEnd="70sp"
+            android:includeFontPadding="false"
+            android:text="@string/login"
+            android:textAlignment="textStart"
+            android:textColor="#d9d9d9"
+            android:textSize="32sp" />
 
-            <TextView
-                android:id="@+id/textLogin"
-                android:layout_width="match_parent"
+        <EditText
+            android:id="@+id/editId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginEnd="70sp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/id_placeholder"
+            android:includeFontPadding="false"
+            android:inputType="textPersonName"
+            android:paddingStart="10sp"
+            android:paddingEnd="10sp"
+            android:textColor="#d9d9d9"
+            android:textColorHint="#8a8a8a"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginEnd="70sp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/password_placeholder"
+            android:includeFontPadding="false"
+            android:inputType="textPassword"
+            android:paddingStart="10sp"
+            android:paddingEnd="10sp"
+            android:textColor="#d9d9d9"
+            android:textColorHint="#8a8a8a"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:id="@+id/layoutButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginEnd="50sp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnForgot"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="70sp"
-                android:layout_marginEnd="70sp"
+                android:layout_marginEnd="10sp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
                 android:includeFontPadding="false"
-                android:text="@string/textLogin"
-                android:textAlignment="textStart"
+                android:text="@string/btnForgot_text"
                 android:textColor="#d9d9d9"
-                android:textSize="32sp" />
+                android:textStyle="italic" />
 
-            <EditText
-                android:id="@+id/editId"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="70sp"
-                android:layout_marginTop="20sp"
-                android:layout_marginEnd="70sp"
-                android:autofillHints=""
-                android:ems="10"
-                android:hint="@string/idPlaceholder"
-                android:includeFontPadding="false"
-                android:inputType="textPersonName"
-                android:paddingStart="10sp"
-                android:paddingEnd="10sp"
-                android:textColor="#d9d9d9"
-                android:textColorHint="#8a8a8a"
-                android:textSize="20sp" />
-
-            <EditText
-                android:id="@+id/editPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="70sp"
-                android:layout_marginTop="20sp"
-                android:layout_marginEnd="70sp"
-                android:autofillHints=""
-                android:ems="10"
-                android:hint="@string/passwordPlaceholder"
-                android:includeFontPadding="false"
-                android:inputType="textPassword"
-                android:paddingStart="10sp"
-                android:paddingEnd="10sp"
-                android:textColor="#d9d9d9"
-                android:textColorHint="#8a8a8a"
-                android:textSize="20sp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="50sp"
-                android:layout_marginTop="20sp"
-                android:layout_marginEnd="50sp"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/btnForgot"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10sp"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:includeFontPadding="false"
-                    android:text="@string/btnForgotText"
-                    android:textColor="#d9d9d9"
-                    android:textStyle="italic" />
-
-                <Button
-                    android:id="@+id/btnLogin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10sp"
-                    android:layout_weight="1"
-                    android:background="#32a1b8"
-                    android:text="@string/btnLoginText"
-                    android:textColor="#d9d9d9" />
-            </LinearLayout>
+                android:layout_marginStart="10sp"
+                android:layout_weight="1"
+                android:background="#32a1b8"
+                android:text="@string/btnLogin_text"
+                android:textColor="#d9d9d9" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

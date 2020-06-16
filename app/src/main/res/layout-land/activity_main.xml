@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#303030"
     android:orientation="horizontal"
-    android:weightSum="4"
+    android:weightSum="5"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -14,21 +14,15 @@
         android:layout_height="match_parent"
         android:layout_weight="3"
         android:background="#484848"
-        android:orientation="vertical">
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical|center_horizontal|center">
-
+        android:orientation="vertical"
+        android:gravity="center_vertical|center_horizontal|center"
+        >
             <TextView
                 android:id="@+id/textTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:includeFontPadding="false"
-                android:paddingBottom="20sp"
-                android:text="@string/Title"
+                android:text="@string/title"
                 android:textAlignment="center"
                 android:textColor="#d9d9d9"
                 android:textSize="72sp" />
@@ -37,30 +31,23 @@
                 android:id="@+id/textSubtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/textTitle"
                 android:includeFontPadding="false"
                 android:text="@string/subtitle"
                 android:textAlignment="center"
                 android:textColor="#d9d9d9"
                 android:textSize="16sp" />
-        </RelativeLayout>
     </LinearLayout>
 
     <View
-        android:id="@+id/view3"
+        android:id="@+id/viewDivider"
         android:layout_width="2dp"
         android:layout_height="match_parent"
         android:background="#32a1b8" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="2"
-        android:orientation="vertical">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="2"
             android:gravity="center_vertical|center_horizontal|center"
             android:orientation="vertical">
 
@@ -71,7 +58,7 @@
                 android:layout_marginStart="50sp"
                 android:layout_marginEnd="50sp"
                 android:includeFontPadding="false"
-                android:text="@string/textLogin"
+                android:text="@string/login"
                 android:textAlignment="textStart"
                 android:textColor="#d9d9d9"
                 android:textSize="32sp" />
@@ -85,7 +72,7 @@
                 android:layout_marginEnd="50sp"
                 android:autofillHints=""
                 android:ems="10"
-                android:hint="@string/idPlaceholder"
+                android:hint="@string/id_placeholder"
                 android:includeFontPadding="false"
                 android:inputType="textPersonName"
                 android:paddingStart="10sp"
@@ -103,7 +90,7 @@
                 android:layout_marginEnd="50sp"
                 android:autofillHints=""
                 android:ems="10"
-                android:hint="@string/passwordPlaceholder"
+                android:hint="@string/password_placeholder"
                 android:includeFontPadding="false"
                 android:inputType="textPassword"
                 android:paddingStart="10sp"
@@ -128,7 +115,7 @@
                     android:layout_weight="1"
                     android:background="@android:color/transparent"
                     android:includeFontPadding="false"
-                    android:text="@string/btnForgotText"
+                    android:text="@string/btnForgot_text"
                     android:textColor="#d9d9d9"
                     android:textStyle="italic" />
 
@@ -139,9 +126,8 @@
                     android:layout_marginStart="10sp"
                     android:layout_weight="1"
                     android:background="#32a1b8"
-                    android:text="@string/btnLoginText"
+                    android:text="@string/btnLogin_text"
                     android:textColor="#d9d9d9" />
             </LinearLayout>
-        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

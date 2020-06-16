@@ -15,4 +15,6 @@
     <string name="btnProfile_text">Profile</string>
     <string name="history_title">Attendance History</string>
     <string name="student_name">Wasi Ul Islam Tasin</string>
+    <string name="go">Go to \n<a>https://portal.aiub.edu/ForgotPassword</a>\n to reset your VUES password</string>
+    <string name="button">Back to Login</string>
 </resources>

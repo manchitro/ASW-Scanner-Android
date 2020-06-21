@@ -8,7 +8,7 @@
     android:background="#303030"
     android:orientation="vertical"
     android:weightSum="15"
-    tools:context=".MainActivity">
+    tools:context=".DashboardActivity">
 
     <LinearLayout
         android:id="@+id/layout_welcome"

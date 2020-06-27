@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#303030"
+    android:orientation="vertical"
+    android:weightSum="15"
+    tools:context=".ScanConfirmActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="13"
+        android:background="#484848"
+        android:weightSum="15"
+        android:orientation="horizontal"
+        android:baselineAligned="false"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:orientation="vertical"
+            android:gravity="center_vertical|center_horizontal|center"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            tools:ignore="NestedWeights">
+
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:width="10dp"
+                android:text="Wasi Ul Islam Tasin"
+                android:textColor="#d9d9d9"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/txtId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Scan Confirmation"
+                android:textColor="#d9d9d9"
+                android:textSize="24sp"
+                android:textStyle="italic" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="11"
+            android:gravity="center_vertical|center_horizontal|center"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp">
+
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btnLogout_text"
+                android:background="@drawable/logout_btn_bg_stroke"
+                android:textColor="#d9d9d9"
+                android:textSize="12sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/viewDivider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#32a1b8"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:weightSum="10"
+        android:orientation="vertical"
+        android:gravity="center_vertical|center|center_horizontal"
+        android:paddingStart="50dp"
+        android:paddingEnd="50dp"
+        android:paddingTop="100dp"
+        android:paddingBottom="100dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="You have just scanned for a class of"
+            android:textColor="#d9d9d9"
+            android:textAlignment="center"
+            android:textSize="18sp"/>
+        <TextView
+            android:id="@+id/sectionName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Web Tech [A]"
+            android:textColor="#d9d9d9"
+            android:textAlignment="center"
+            android:textSize="24sp"/>
+        <TextView
+            android:id="@+id/classDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Class Date:  24-06-2020"
+            android:textColor="#d9d9d9"
+            android:textAlignment="center"
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/scanTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Scan time: 8:45 am"
+            android:textColor="#d9d9d9"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="italic"/>
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back to Dashboard"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:background="#32a1b8"
+            android:textColor="#d9d9d9"/>
+
+
+    </LinearLayout>
+</LinearLayout>

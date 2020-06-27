@@ -7,22 +7,10 @@
     android:orientation="vertical"
     tools:context=".ScannerActivity">
 
-    <LinearLayout
-        android:id="@+id/layout_result"
+    <me.dm7.barcodescanner.zxing.ZXingScannerView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_alignParentBottom="true"
-        android:background="#333"
-        android:padding="5dp">
-
-        <TextView
-            android:id="@+id/scanResult"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            android:textColor="#fff"
-            android:textAlignment="center"/>
-    </LinearLayout>
+        android:layout_height="match_parent"
+        android:id="@+id/scannerView"
+        />
 
 </RelativeLayout>

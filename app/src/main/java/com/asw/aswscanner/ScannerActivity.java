@@ -3,18 +3,61 @@ package com.asw.aswscanner;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class ScannerActivity extends AppCompatActivity {
-    private TextView scanResult;
+import com.google.zxing.Result;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionDeniedResponse;
+import com.karumi.dexter.listener.PermissionGrantedResponse;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.single.PermissionListener;
+
+import java.util.Calendar;
+
+import me.dm7.barcodescanner.zxing.ZXingScannerView;
+
+public class ScannerActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
+    ZXingScannerView scannerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanner);
 
-        scanResult = findViewById(R.id.scanResult);
+        scannerView = findViewById(R.id.scannerView);
+
+        Dexter.withActivity(this)
+                .withPermission(Manifest.permission.CAMERA)
+                .withListener(new PermissionListener() {
+                    @Override
+                    public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
+                        scannerView.setResultHandler(ScannerActivity.this);
+                        scannerView.startCamera();
+                    }
+
+                    @Override
+                    public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
+                        Toast.makeText(ScannerActivity.this, "Gib camura pls", Toast.LENGTH_LONG).show();
+                    }
+
+                    @Override
+                    public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken) {
+
+                    }
+                }).check();
+    }
+
+    @Override
+    public void handleResult(Result rawResult){
+        Intent intent = new Intent(ScannerActivity.this, ScanConfirmActivity.class);
+        intent.putExtra("qrData", rawResult.getText());
+        intent.putExtra("scanTime", Calendar.getInstance().getTime().toString());
+        startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
     @Override

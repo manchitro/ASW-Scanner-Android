@@ -2,9 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.asw.aswscanner">
 
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-feature android:name="android.hardware.camera"/>
-    <uses-feature android:name="android.hardware.autofocus"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.autofocus" />
 
     <application
         android:allowBackup="true"
@@ -13,8 +14,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProfileActivity"></activity>
-        <activity android:name=".HistoryActivity"></activity>
+        <activity android:name=".ScanConfirmActivity"></activity>
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".HistoryActivity" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".ScannerActivity" />
         <activity android:name=".DashboardActivity" />

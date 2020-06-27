@@ -134,5 +134,11 @@
                 android:text="@string/btnLogin_text"
                 android:textColor="#d9d9d9" />
         </LinearLayout>
+        <WebView
+            android:id="@+id/webView"
+            android:background="#000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
     </LinearLayout>
 </LinearLayout>

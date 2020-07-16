@@ -103,6 +103,18 @@
             android:textColorHint="#8a8a8a"
             android:textSize="20sp" />
 
+        <CheckBox
+            android:id="@+id/rememberMe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/remember_me"
+            android:textColor="#d9d9d9"
+            android:textSize="18sp"
+            android:layout_marginStart="70sp"
+            android:layout_marginEnd="70sp"
+            android:layout_marginTop="20sp"
+            />
+
         <LinearLayout
             android:id="@+id/layoutButtons"
             android:layout_width="match_parent"

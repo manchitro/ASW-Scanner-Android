@@ -8,13 +8,14 @@
     <uses-feature android:name="android.hardware.autofocus" />
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".ScanConfirmActivity"></activity>
+        android:theme="@style/AppTheme"
+        android:installLocation="internalOnly">
+        <activity android:name=".ScanConfirmActivity"/>
         <activity android:name=".ProfileActivity" />
         <activity android:name=".HistoryActivity" />
         <activity android:name=".ForgotPasswordActivity" />

@@ -5,20 +5,24 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.webkit.JavascriptInterface;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Calendar;
+import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -28,6 +32,12 @@ public class MainActivity extends AppCompatActivity {
     private Button btnLogin;
     private Button btnForgot;
     private WebView webView;
+    private CheckBox rememberMe;
+
+    public static final String SHARED_PREFS = "sharedPrefs";
+    public static final String USER_NAME = "userName";
+    public static final String USER_ID = "userId";
+    public static final String REMEMBER_ME = "rememberMe";
 
     @SuppressLint("SetJavaScriptEnabled")
     @Override
@@ -40,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         btnForgot = findViewById(R.id.btnForgot);
         webView = findViewById(R.id.webView);
+        rememberMe = findViewById(R.id.rememberMe);
 
         final Context myApp = this;
 
@@ -116,12 +127,23 @@ public class MainActivity extends AppCompatActivity {
                     studentId = studentId.trim();
 
                     if (studentName != null){
-                        Toast.makeText(MainActivity.this, "Logged In " + studentName + " " + studentId, Toast.LENGTH_LONG).show();
+                        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+                        if(sharedPreferences.getBoolean(REMEMBER_ME, false)){
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString(USER_NAME, studentName);
+                            editor.putString(USER_ID, studentId);
+                            editor.apply();
+
+                            Toast.makeText(MainActivity.this, "User data saved in prefs", Toast.LENGTH_SHORT).show();
+                        }
+                        
+                        Toast.makeText(MainActivity.this, "Logged In " + studentName + " " + studentId + " first", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
                         intent.putExtra("studentName", studentName);
                         intent.putExtra("studentId", studentId);
                         startActivity(intent);
                         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                        finish();
                     }
                 }
                 else if (!html.contains("Welcome")){
@@ -158,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        webView.loadUrl("https://portal.aiub.edu/Login");
+        webView.loadUrl("https://portal.aiub.edu/Login/Logout");
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -185,5 +207,35 @@ public class MainActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }
         });
+
+        rememberMe.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                editor.putBoolean(REMEMBER_ME, rememberMe.isChecked());
+                editor.apply();
+            }
+        });
+
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        boolean rememberState = sharedPreferences.getBoolean(REMEMBER_ME, false);
+        rememberMe.setChecked(rememberState);
+
+        if(rememberState){
+            String studentName = sharedPreferences.getString(USER_NAME, "");
+            String studentId = sharedPreferences.getString(USER_ID, "");
+
+            if(!(studentId.equals("") || studentName.equals(""))){
+                Toast.makeText(MainActivity.this, "Logged In " + studentName + " " + studentId + " first", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
+                intent.putExtra("studentName", studentName);
+                intent.putExtra("studentId", studentId);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                finish();
+            }
+        }
     }
 }

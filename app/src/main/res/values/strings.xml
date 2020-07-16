@@ -18,4 +18,5 @@
     <string name="go">Go to \n<a>https://portal.aiub.edu/ForgotPassword</a>\n to reset your VUES password</string>
     <string name="button">Back to Login</string>
     <string name="attendance_history">Attendance History</string>
+    <string name="remember_me">Keep me logged in</string>
 </resources>

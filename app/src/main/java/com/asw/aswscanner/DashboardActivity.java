@@ -36,8 +36,11 @@ public class DashboardActivity extends AppCompatActivity {
         btnProfile = findViewById(R.id.btnProfile);
         btnLogout = findViewById(R.id.btnLogout);
 
-        txtName.setText(getString(R.string.welcome_student, getIntent().getExtras().getString("studentName")));
-        txtId.setText(getString(R.string.academic_id, getIntent().getExtras().getString("studentId")));
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
+        String studentName = sharedPreferences.getString(USER_NAME, "");
+        String studentId = sharedPreferences.getString(USER_ID, "");
+        txtName.setText(studentName);
+        txtId.setText(studentId);
 
 
         btnScan.setOnClickListener(new View.OnClickListener() {

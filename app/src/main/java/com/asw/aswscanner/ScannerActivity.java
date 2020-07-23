@@ -16,7 +16,9 @@ import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
@@ -55,7 +57,10 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
     public void handleResult(Result rawResult){
         Intent intent = new Intent(ScannerActivity.this, ScanConfirmActivity.class);
         intent.putExtra("qrData", rawResult.getText());
-        intent.putExtra("scanTime", Calendar.getInstance().getTime().toString());
+        Date scanTime = Calendar.getInstance().getTime();
+        SimpleDateFormat scanTimeFormat = new SimpleDateFormat("h:mm:ss a MMM d, yyyy");
+        String scanTimeStr = scanTimeFormat.format(scanTime);
+        intent.putExtra("scanTime", scanTimeStr);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }

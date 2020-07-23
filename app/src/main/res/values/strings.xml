@@ -14,9 +14,13 @@
     <string name="btnHistory_text">History</string>
     <string name="btnProfile_text">Profile</string>
     <string name="history_title">Attendance History</string>
-    <string name="student_name">Wasi Ul Islam Tasin</string>
+    <string name="student_name">%1$s</string>
     <string name="go">Go to \n<a>https://portal.aiub.edu/ForgotPassword</a>\n to reset your VUES password</string>
     <string name="button">Back to Login</string>
-    <string name="attendance_history">Attendance History</string>
     <string name="remember_me">Keep me logged in</string>
+    <string name="attendance_history">Attendance History</string>
+    <string name="profile">Profile</string>
+    <string name="scan_confirmation">Scan Confirmation</string>
+    <string name="you_have_just_scanned_for_a_class_of">You have just scanned for a class of</string>
+    <string name="back_to_dashboard">Back to Dashboard</string>
 </resources>

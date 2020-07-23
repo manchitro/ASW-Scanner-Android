@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:width="10dp"
-                android:text="Wasi Ul Islam Tasin"
+                android:text="@string/student_name"
                 android:textColor="#d9d9d9"
                 android:textSize="18sp" />
 
@@ -42,7 +42,7 @@
                 android:id="@+id/txtId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Attendance History"
+                android:text="@string/attendance_history"
                 android:textColor="#d9d9d9"
                 android:textSize="24sp"
                 android:textStyle="italic"/>
